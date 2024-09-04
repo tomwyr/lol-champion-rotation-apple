@@ -137,18 +137,6 @@ struct SearchField: View {
     }
 }
 
-struct Passthrough<Content: View>: View {
-    let content: () -> Content
-
-    init(@ViewBuilder content: @escaping () -> Content) {
-        self.content = content
-    }
-
-    var body: some View {
-        content()
-    }
-}
-
 extension Int {
     func clamp(to range: ClosedRange<Int>) -> Int {
         Swift.min(Swift.max(self, range.lowerBound), range.upperBound)
